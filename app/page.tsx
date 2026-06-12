@@ -96,7 +96,7 @@ export default function EnchantingDateProposalApp() {
     
     <motion.div key="step0" className="text-center" {...fadeInUp}>
       <h1 className="text-4xl sm:text-5xl font-extrabold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-pink-600 to-rose-500">
-        Will you go on a date with me?
+        Would you like to go on a date with Tony?
       </h1>
       <motion.img
         initial={{ opacity: 0, scale: 0.8 }}
@@ -128,7 +128,7 @@ export default function EnchantingDateProposalApp() {
           <DialogContent className="bg-pink-50 border-2 border-pink-300">
             <DialogHeader>
               <DialogTitle className="text-2xl font-bold text-pink-600">
-                There is no &quot;NOOOOOO&quot;
+                Please don't make Tony sad!
               </DialogTitle>
               <DialogDescription className="text-lg text-pink-500">
                 You must come with me!
@@ -138,7 +138,7 @@ export default function EnchantingDateProposalApp() {
               initial={{ opacity: 0, scale: 0.8 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.5 }}
-              src="https://media1.tenor.com/m/2XJN2YEYbIAAAAAd/peach-and.gif"
+              src="https://tenor.com/view/peach-and-goma-peach-peach-cat-gif-2915529514089126873"
               alt="Excited bear gif"
               className="w-full max-w-md mx-auto mb-4 rounded-lg shadow-lg"
             />{" "}
@@ -160,7 +160,7 @@ export default function EnchantingDateProposalApp() {
     <motion.div key="step1" className="text-center" {...fadeInUp}>
       <StepCard stepNumber={1} totalSteps={6}>
       <h2 className="text-4xl sm:text-5xl font-playfair font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-rose-500 to-pink-600">
-        YEYYYYYYYY, WHEN SHALL WE GO?
+        YAYYYYYYYY, WHEN IS A GOOD TIME?
       </h2>
       <motion.img
         initial={{ opacity: 0, scale: 0.8 }}
@@ -233,15 +233,15 @@ export default function EnchantingDateProposalApp() {
     <motion.div key="step2" className="text-center" {...fadeInUp}>
       <StepCard stepNumber={2} totalSteps={6}>
       <h2 className="text-4xl sm:text-5xl font-playfair font-bold mb-8 bg-clip-text text-transparent bg-gradient-to-r from-rose-500 to-pink-600">
-        What shall we feast on, my dear?
+        What would the lady like to eat?
       </h2>
       <div className="grid grid-cols-2 gap-4 md:gap-6 mb-8">
         {[
-          { name: "Lasagna", icon: <Utensils className="w-6 h-6" /> },
-          { name: "Chicken Pie", icon: <Utensils className="w-6 h-6" /> },
-          { name: "Chicken Shawarma", icon: <Utensils className="w-6 h-6" /> },
-          { name: "Snack Platter", icon: <Coffee className="w-6 h-6" /> },
-          { name: "Mix rice", icon: <Utensils className="w-6 h-6" /> },
+          { name: "Italian", icon: <Utensils className="w-6 h-6" /> },
+          { name: "Mexican", icon: <Utensils className="w-6 h-6" /> },
+          { name: "Sushi", icon: <Utensils className="w-6 h-6" /> },
+          { name: "Coffee", icon: <Coffee className="w-6 h-6" /> },
+          { name: "Surprise/Other", icon: <Utensils className="w-6 h-6" /> },
         ].map(({ name, icon }) => (
           <SelectButton
             key={name}
