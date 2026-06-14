@@ -21,7 +21,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
-import { Heart, Coffee, Film, Utensils, Clock } from "lucide-react";
+import { Heart, Coffee, Film, Utensils, Clock, Star } from "lucide-react";
 import confetti from "canvas-confetti";
 import ThemedCard from "@/components/ThemedCard";
 import Sparkles from "@/components/Sparkles";
@@ -131,15 +131,15 @@ export default function EnchantingDateProposalApp() {
                 Please don't make Tony sad!
               </DialogTitle>
               <DialogDescription className="text-lg text-pink-500">
-                You must come with me!
+                You must say yes!
               </DialogDescription>
             </DialogHeader>
             <motion.img
               initial={{ opacity: 0, scale: 0.8 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.5 }}
-              src="https://tenor.com/view/peach-and-goma-peach-peach-cat-gif-2915529514089126873"
-              alt="Excited bear gif"
+              src="https://media.tenor.com/KHYKpVtzG9kAAAAi/peach-and-goma-peach.gif"
+              alt="Sad bear gif"
               className="w-full max-w-md mx-auto mb-4 rounded-lg shadow-lg"
             />{" "}
             <Button
@@ -160,7 +160,7 @@ export default function EnchantingDateProposalApp() {
     <motion.div key="step1" className="text-center" {...fadeInUp}>
       <StepCard stepNumber={1} totalSteps={6}>
       <h2 className="text-4xl sm:text-5xl font-playfair font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-rose-500 to-pink-600">
-        YAYYYYYYYY, WHEN IS A GOOD TIME?
+        YAYYYYYYYY, WHEN IS A GOOD TIME? Maybe W, Th or F?
       </h2>
       <motion.img
         initial={{ opacity: 0, scale: 0.8 }}
@@ -270,38 +270,36 @@ export default function EnchantingDateProposalApp() {
      
     <motion.div key="step3" className="text-center" {...fadeInUp}>
       <h2 className="text-3xl font-semibold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-rose-500 to-pink-600">
-        What shall we watch together?
+        What should we do for fun?!
       </h2>
       <div className="grid grid-cols-2 gap-6 mb-6">
         {[
-          "The Notebook",
-          "La La Land",
-          "Titanic",
-          "Pride and Prejudice",
-          "Anyone But You",
-          "Past Lives",
-          "Love at First Sight",
-          "Through My Window 3",
+          "Bowling",
+          "Mini Golf",
+          "Park",
+          "Church Tour",
+          "A La Carte",
+          "Winging It",
           "Something else",
-        ].map((movie) => (
+        ].map((activity) => (
           <motion.button
-            key={movie}
+            key={activity}
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
             className="bg-white text-pink-600 hover:bg-pink-100 font-bold py-4 px-6 rounded-lg shadow-md transition-colors duration-300"
             onClick={() => {
-              if (movie === "Something else") {
-                const customMovie = prompt(
-                  "What movie would you like to watch?"
+              if (activity === "Something else") {
+                const customActivity = prompt(
+                  "What would you like to do?"
                 );
-                if (customMovie) handleAnswer("movie", customMovie);
+                if (customActivity) handleAnswer("movie", customActivity);
               } else {
-                handleAnswer("movie", movie);
+                handleAnswer("movie", activity);
               }
             }}
           >
-            <Film className="mx-auto mb-2" />
-            {movie}
+            <Star className="mx-auto mb-2" />
+            {activity}
           </motion.button>
         ))}
       </div>
@@ -321,11 +319,12 @@ export default function EnchantingDateProposalApp() {
           onValueChange={(value) =>
             setAnswers({ ...answers, excitement: value[0] })
           }
-        />
-        <div className="flex justify-between mt-6 text-sm text-pink-600 font-semibold">
-          <span>😐 Can&apos;t wait!</span>
-          <span>🤩 Super duper excited!</span>
-        </div>
+          />
+          <div className="flex justify-between mt-6 text-sm text-pink-600 font-semibold">
+            <span>😐 Meh</span>
+            <span>😊 Can&apos;t Wait!</span>
+            <span>🤩 Super Duper Excited!</span>
+          </div>
       </div>
       <motion.div
         className="text-4xl font-playfair font-bold text-pink-600 mb-8"
@@ -351,7 +350,7 @@ export default function EnchantingDateProposalApp() {
     <motion.div key="step5" className="text-center" {...fadeInUp}>
       <StepCard stepNumber={6} totalSteps={6}>
       <h2 className="text-5xl sm:text-6xl font-playfair font-bold mb-8 bg-clip-text text-transparent bg-gradient-to-r from-pink-600 to-rose-500">
-        It&apos;s a date, my love!
+        It&apos;s a date!
       </h2>
       <p className="text-lg text-rose-500 mb-3 font-poppins">
         I can&apos;t wait to see you on:
@@ -388,7 +387,7 @@ export default function EnchantingDateProposalApp() {
         className="mt-8 space-y-3 text-lg text-pink-600 font-poppins"
       >
         <p className="text-base">We&apos;ll enjoy some delicious <span className="font-semibold">{answers.food.join(", ")}</span>.</p>
-        <p className="text-base">Then we&apos;ll watch <span className="font-semibold italic">&quot;{answers.movie}&quot;</span> together.</p>
+        <p className="text-base">Then we&apos;ll go to <span className="font-semibold italic">&quot;{answers.movie}&quot;</span> together.</p>
         <p className="text-xl font-playfair font-bold mt-6">
           Your excitement level: <span className="text-rose-600">{answers.excitement}/100</span>
         </p>
