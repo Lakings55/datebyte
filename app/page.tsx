@@ -278,8 +278,7 @@ export default function EnchantingDateProposalApp() {
           "Mini Golf",
           "Park",
           "Church Tour",
-          "A La Carte",
-          "Winging It",
+          "Let's Just Wing it!",
           "Something else",
         ].map((activity) => (
           <motion.button
