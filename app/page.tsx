@@ -21,7 +21,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
-import { Heart, Coffee, Film, Utensils, Clock, Star } from "lucide-react";
+import { Heart, Coffee, Utensils, Clock, Star } from "lucide-react";
 import confetti from "canvas-confetti";
 import ThemedCard from "@/components/ThemedCard";
 import Sparkles from "@/components/Sparkles";
@@ -87,7 +87,7 @@ export default function EnchantingDateProposalApp() {
     if (!d) return "";
     try {
       return d.toLocaleDateString(undefined, { month: 'short', day: 'numeric' });
-    } catch (e) {
+    } catch {
       return d.toDateString();
     }
   };
@@ -128,7 +128,7 @@ export default function EnchantingDateProposalApp() {
           <DialogContent className="bg-pink-50 border-2 border-pink-300">
             <DialogHeader>
               <DialogTitle className="text-2xl font-bold text-pink-600">
-                Please don't make Tony sad!
+                Please don&apos;t make Tony sad!
               </DialogTitle>
               <DialogDescription className="text-lg text-pink-500">
                 You must say yes!
